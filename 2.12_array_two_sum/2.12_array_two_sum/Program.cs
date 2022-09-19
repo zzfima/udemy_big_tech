@@ -20,7 +20,7 @@ namespace _2._12_array_two_sum
 
         static int[] TwoSumV1(int[] nums, int target)
         {
-            Console.WriteLine("TwoSumV1 Time complexity = O(n), space complexity = n");
+            Console.WriteLine("TwoSumV1 Time complexity = O(n), space complexity = О(n)");
 
             Dictionary<int, int> numsMap = new Dictionary<int, int>();
 
@@ -43,7 +43,7 @@ namespace _2._12_array_two_sum
 
         static int[] TwoSumV2(int[] nums, int target)
         {
-            Console.WriteLine("TwoSumV2 Time complexity = O(n), space complexity = n, but it maybe faster than TwoSumV1");
+            Console.WriteLine("TwoSumV2 Time complexity = O(n), space complexity = О(n), but it maybe faster than TwoSumV1");
 
             Dictionary<int, int> numsMap = new Dictionary<int, int>();
 
