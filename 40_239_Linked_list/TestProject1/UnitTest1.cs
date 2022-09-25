@@ -23,7 +23,7 @@ namespace TestProject1
         }
 
         [TestMethod]
-        public void LinkedListShallBe1WhenAdd1()
+        public void LinkedListShallBe1WhenAddToBack1()
         {
             var s = new SingleLinkedList<int>();
             s.AddLast(4);
@@ -31,7 +31,7 @@ namespace TestProject1
         }
 
         [TestMethod]
-        public void LinkedListShallBe4WhenAdd4()
+        public void LinkedListShallBe4WhenAddToBack4()
         {
             var s = new SingleLinkedList<int>();
             s.AddLast(4);
@@ -39,6 +39,21 @@ namespace TestProject1
             s.AddLast(6);
             s.AddLast(7);
             s.Count.Should().Be(4);
+        }
+
+        [TestMethod]
+        public void LinkedListDoForEach()
+        {
+            var s = new SingleLinkedList<int>();
+            s.AddLast(4);
+            s.AddLast(5);
+            s.AddLast(6);
+            s.AddLast(7);
+
+            foreach (var i in s)
+            {
+                Console.WriteLine(i);
+            }
         }
     }
 }

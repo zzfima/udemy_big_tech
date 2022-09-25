@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 
 namespace _40_239_Linked_list
 {
-    public class SingleLinkedList<T>
+    public class SingleLinkedList<T> : IEnumerable<T>
     {
         private Node<T> _head;
         private Node<T> _tail;
@@ -20,9 +22,26 @@ namespace _40_239_Linked_list
         {
             var n = new Node<T>();
             n.Value = i;
-            n.Next = _tail;
+
+            _tail.Next = n;
             _tail = n;
             Count++;
+        }
+
+        public IEnumerator<T> GetEnumerator()
+        {
+            var n = _head;
+
+            while (n.Next != null)
+            {
+                yield return n.Value;
+                n = n.Next;
+            }
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
         }
     }
 }
