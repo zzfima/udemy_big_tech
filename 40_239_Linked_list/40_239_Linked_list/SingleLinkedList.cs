@@ -20,19 +20,24 @@ namespace _40_239_Linked_list
 
         public void AddLast(T i)
         {
-            var n = new Node<T>();
-            n.Value = i;
+            var newNode = new Node<T>();
+            newNode.Value = i;
 
-            _tail.Next = n;
-            _tail = n;
+            _tail.Next = newNode;
+            _tail = newNode;
             Count++;
+        }
+
+        public void AddStart(T i)
+        {
+
         }
 
         public IEnumerator<T> GetEnumerator()
         {
-            var n = _head;
+            var n = _head.Next;
 
-            while (n.Next != null)
+            while (n != null)
             {
                 yield return n.Value;
                 n = n.Next;
