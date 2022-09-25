@@ -30,7 +30,13 @@ namespace _40_239_Linked_list
 
         public void AddStart(T i)
         {
+            var newNode = new Node<T>();
+            newNode.Value = i;
 
+            newNode.Next = _head.Next;
+            _head.Next = newNode;
+
+            Count++;
         }
 
         public IEnumerator<T> GetEnumerator()

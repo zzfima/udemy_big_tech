@@ -45,14 +45,19 @@ namespace TestProject1
         public void LinkedListDoForEach()
         {
             var s = new SingleLinkedList<int>();
-            s.AddLast(4);
-            s.AddLast(5);
             s.AddLast(6);
-            s.AddLast(7);
+            s.AddLast(9);
+            s.AddLast(12);
+            s.AddLast(15);
+            s.AddStart(3);
+            s.AddStart(0);
+
+            int check = 0;
 
             foreach (var i in s)
             {
-                Console.WriteLine(i);
+                i.Should().Be(check);
+                check += 3;
             }
         }
     }
