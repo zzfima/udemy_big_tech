@@ -39,6 +39,30 @@ namespace _40_239_Linked_list
             Count++;
         }
 
+        public void Insert(int index, T i)
+        {
+            int cnt = 0;
+
+            Node<T> current = _head;
+
+            while (current != null)
+            {
+
+                if (cnt == index)
+                {
+                    var newNode = new Node<T>();
+                    newNode.Value = i;
+
+                    newNode.Next = current.Next;
+                    current.Next = newNode;
+                    return;
+                }
+
+                current = current.Next;
+                cnt++;
+            }
+        }
+
         public IEnumerator<T> GetEnumerator()
         {
             var n = _head.Next;

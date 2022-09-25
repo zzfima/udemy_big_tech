@@ -41,6 +41,25 @@ namespace TestProject1
             s.Count.Should().Be(4);
         }
 
+
+        [TestMethod]
+        public void LinkedListShallInsert()
+        {
+            var s = new SingleLinkedList<int>();
+            s.AddLast(4);
+            s.AddLast(5);
+            s.AddLast(7);
+            s.AddLast(8);
+            s.Insert(2, 6);
+            int check = 4;
+
+            foreach (var i in s)
+            {
+                i.Should().Be(check);
+                check ++;
+            }
+        }
+
         [TestMethod]
         public void LinkedListDoForEach()
         {
