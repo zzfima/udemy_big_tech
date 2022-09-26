@@ -26,11 +26,4 @@
 
         private int CalculateAreaOfTrapezoid(int a, int b, int h) => (a + b) * h / 2;
     }
-
-    public class WaterContainer
-    {
-        public int LeftWall { get; set; }
-        public int RightWall { get; set; }
-        public int Area { get; set; }
-    }
 }
