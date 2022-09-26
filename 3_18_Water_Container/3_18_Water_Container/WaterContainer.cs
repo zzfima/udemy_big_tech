@@ -2,8 +2,8 @@
 {
     public class WaterContainer
     {
-        public int LeftWall { get; set; }
-        public int RightWall { get; set; }
+        public int LeftWallHeigth { get; set; }
+        public int RightWallHeigth { get; set; }
         public int Area { get; set; }
     }
 }

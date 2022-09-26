@@ -17,8 +17,8 @@ namespace _3_18_Water_Container
                     if (area > maxVolume.Area)
                     {
                         maxVolume.Area = area;
-                        maxVolume.LeftWall = heights[i];
-                        maxVolume.RightWall = heights[j];
+                        maxVolume.LeftWallHeigth = heights[i];
+                        maxVolume.RightWallHeigth = heights[j];
                     }
 
                 }
@@ -27,10 +27,10 @@ namespace _3_18_Water_Container
             return maxVolume;
         }
 
-        private int CalculateAreaOfContainer(int a, int b, int h)
+        private int CalculateAreaOfContainer(int leftWallHeight, int rightWalHeight, int distanceBetweenWalls)
         {
-            var min = Math.Min(a, b);
-            return min * h;
+            var min = Math.Min(leftWallHeight, rightWalHeight);
+            return min * distanceBetweenWalls;
         }
     }
 }
