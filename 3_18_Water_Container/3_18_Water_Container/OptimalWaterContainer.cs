@@ -1,4 +1,7 @@
-﻿namespace _3_18_Water_Container
+﻿using System;
+using System.Text.RegularExpressions;
+
+namespace _3_18_Water_Container
 {
     public class OptimalWaterContainer
     {
@@ -10,7 +13,7 @@
             {
                 for (int j = i + 1; j < heights.Length; j++)
                 {
-                    var area = CalculateAreaOfTrapezoid(heights[i], heights[j], j - i);
+                    var area = CalculateAreaOfContainer(heights[i], heights[j], j - i);
                     if (area > maxVolume.Area)
                     {
                         maxVolume.Area = area;
@@ -24,6 +27,10 @@
             return maxVolume;
         }
 
-        private int CalculateAreaOfTrapezoid(int a, int b, int h) => (a + b) * h / 2;
+        private int CalculateAreaOfContainer(int a, int b, int h)
+        {
+            var min = Math.Min(a, b);
+            return min * h;
+        }
     }
 }

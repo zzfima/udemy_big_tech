@@ -19,7 +19,7 @@ namespace TestProject1
         {
             _optimalWaterContainer.CalculateAreaSlow(new[] { 1, 8, 6, 2, 9, 4 })
                 .Should()
-                .BeEquivalentTo(new WaterContainer() { LeftWall = 8, RightWall = 9, Area = 25 });
+                .BeEquivalentTo(new WaterContainer() { LeftWall = 8, RightWall = 9, Area = 24 });
         }
 
         [TestMethod]
@@ -28,7 +28,7 @@ namespace TestProject1
             _optimalWaterContainer.CalculateAreaSlow(new[] { 10, 1, 1, 1, 1, 20, 1 })
                 .Should()
                 .BeEquivalentTo(
-                new WaterContainer() { LeftWall = 10, RightWall = 20, Area = 75 });
+                new WaterContainer() { LeftWall = 10, RightWall = 20, Area = 50 });
 
         }
     }
