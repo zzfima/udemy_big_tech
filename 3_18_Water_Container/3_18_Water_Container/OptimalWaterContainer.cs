@@ -31,8 +31,12 @@ namespace _3_18_Water_Container
         {
             //Init
             var maxVolume = new WaterContainer();
+
+            if (heights.Length < 2)
+                return maxVolume;
+
             int a = 0;
-            int b = heights[heights.Length - 1];
+            int b = heights.Length - 1;
             maxVolume.Area = CalculateAreaOfContainer(heights[a], heights[b], b);
             maxVolume.LeftWallHeigth = heights[a];
             maxVolume.RightWallHeigth = heights[b];
@@ -44,7 +48,7 @@ namespace _3_18_Water_Container
                     a++;
 
                 else
-                    b++;
+                    b--;
 
                 var s = CalculateAreaOfContainer(heights[a], heights[b], b - a);
                 if (s > maxVolume.Area)

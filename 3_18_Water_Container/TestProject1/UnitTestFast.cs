@@ -29,7 +29,6 @@ namespace TestProject1
                 .Should()
                 .BeEquivalentTo(
                 new WaterContainer() { LeftWallHeigth = 10, RightWallHeigth = 20, Area = 50 });
-
         }
 
         [TestMethod]
@@ -39,7 +38,6 @@ namespace TestProject1
                 .Should()
                 .BeEquivalentTo(
                     new WaterContainer() { LeftWallHeigth = 0, RightWallHeigth = 0, Area = 0 });
-
         }
 
         [TestMethod]
@@ -49,7 +47,6 @@ namespace TestProject1
                 .Should()
                 .BeEquivalentTo(
                     new WaterContainer() { LeftWallHeigth = 0, RightWallHeigth = 0, Area = 0 });
-
         }
 
         [TestMethod]
@@ -59,7 +56,6 @@ namespace TestProject1
                 .Should()
                 .BeEquivalentTo(
                     new WaterContainer() { LeftWallHeigth = 1, RightWallHeigth = 1, Area = 1 });
-
         }
     }
 }
