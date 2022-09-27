@@ -27,6 +27,37 @@ namespace _3_18_Water_Container
             return maxVolume;
         }
 
+        public WaterContainer CalculateAreaFast(int[] heights)
+        {
+            //Init
+            var maxVolume = new WaterContainer();
+            int a = 0;
+            int b = heights[heights.Length - 1];
+            maxVolume.Area = CalculateAreaOfContainer(heights[a], heights[b], b);
+            maxVolume.LeftWallHeigth = heights[a];
+            maxVolume.RightWallHeigth = heights[b];
+
+            //walk
+            while (a < b)
+            {
+                if (heights[a] < heights[b])
+                    a++;
+
+                else
+                    b++;
+
+                var s = CalculateAreaOfContainer(heights[a], heights[b], b - a);
+                if (s > maxVolume.Area)
+                {
+                    maxVolume.Area = s;
+                    maxVolume.LeftWallHeigth = heights[a];
+                    maxVolume.RightWallHeigth = heights[b];
+                }
+            }
+
+            return maxVolume;
+        }
+
         private int CalculateAreaOfContainer(int leftWallHeight, int rightWalHeight, int distanceBetweenWalls)
         {
             var min = Math.Min(leftWallHeight, rightWalHeight);
