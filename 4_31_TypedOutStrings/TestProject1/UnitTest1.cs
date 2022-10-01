@@ -34,5 +34,19 @@ namespace TestProject1
             var typedOutStrings = new TypedOutStrings();
             typedOutStrings.IsIdentical("aaabbb1#j", "aaabbbj").Should().Be(true);
         }
+
+        [TestMethod]
+        public void TestMethod5()
+        {
+            var typedOutStrings = new TypedOutStrings();
+            typedOutStrings.IsIdentical("aaaBbb", "aaabbb").Should().Be(false);
+        }
+
+        [TestMethod]
+        public void TestMethod6()
+        {
+            var typedOutStrings = new TypedOutStrings();
+            typedOutStrings.IsIdentical("a#b#c#", "K#").Should().Be(true);
+        }
     }
 }
