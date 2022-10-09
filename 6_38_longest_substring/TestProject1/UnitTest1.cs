@@ -13,5 +13,13 @@ namespace TestProject1
             var substringFinder = new LongestSubstringFinder();
             substringFinder.FindLengthBruteForce(s1).Should().Be(3); //abc = 3
         }
+
+        [TestMethod]
+        public void TestMethod2()
+        {
+            var s1 = "abcbdca";
+            var substringFinder = new LongestSubstringFinder();
+            substringFinder.FindLengthBruteForce(s1).Should().Be(4); //bdca  = 4
+        }
     }
 }
