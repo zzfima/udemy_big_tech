@@ -15,7 +15,7 @@ namespace _6_38_longest_substring
             var globalCurrentIndex = 0;
             var localHashSet = new HashSet<char>();
 
-            while (globalCurrentIndex < str.Length)
+            while (globalCurrentIndex < str.Length - globalMaxLength) // minus globalMaxLength because if left less then MaxCount, no reason to continue
             {
                 var localCurrentIndex = globalCurrentIndex;
                 var localMaxLength = 0;
