@@ -12,6 +12,7 @@ namespace TestProject1
             var s1 = "abcbbd";
             var substringFinder = new LongestSubstringFinder();
             substringFinder.FindLengthBruteForce(s1).Should().Be(3); //abc = 3
+            substringFinder.FindLengthSlidingWindow(s1).Should().Be(3);
         }
 
         [TestMethod]
@@ -20,6 +21,7 @@ namespace TestProject1
             var s1 = "abcbdca";
             var substringFinder = new LongestSubstringFinder();
             substringFinder.FindLengthBruteForce(s1).Should().Be(4); //bdca  = 4
+            substringFinder.FindLengthSlidingWindow(s1).Should().Be(4);
         }
     }
 }

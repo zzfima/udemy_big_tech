@@ -46,5 +46,34 @@ namespace _6_38_longest_substring
 
             return globalMaxLength;
         }
+
+        /// <summary>
+        /// Time O(n), space O(n)
+        /// </summary>
+        /// <param name="str"></param>
+        /// <returns></returns>
+        public int FindLengthSlidingWindow(string str)
+        {
+            var maxLength = 0;
+            var leftIndex = 0;
+            var rightIndex = 0;
+            var hash = new Dictionary<char, int>();
+
+            while (leftIndex < str.Length)
+            {
+                if (leftIndex == rightIndex)
+                {
+                    hash.Add(str[leftIndex], leftIndex);
+                    continue;
+                }
+
+                if (!hash.ContainsKey(str[rightIndex]))
+                {
+
+                }
+            }
+
+            return maxLength;
+        }
     }
 }
