@@ -35,12 +35,15 @@ namespace TestProject1
             linkedList.Add(8);
             linkedList.Add(16);
 
-            var cnt = 2;
+            var cnt = 16;
 
-            foreach (var i in linkedList)
+            var reverser = new EnumerableReverser<int>();
+            var reversedLinkedList = reverser.Reverse(linkedList);
+
+            foreach (var i in reversedLinkedList)
             {
                 i.Should().Be(cnt);
-                cnt *= 2;
+                cnt /= 2;
             }
         }
     }

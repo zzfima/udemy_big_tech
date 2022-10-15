@@ -42,7 +42,7 @@ namespace LinkedList
             {
                 yield return current.Value;
                 current = current.Next;
-            } while (current.Next != null);
+            } while (current != null);
         }
 
         IEnumerator IEnumerable.GetEnumerator()
