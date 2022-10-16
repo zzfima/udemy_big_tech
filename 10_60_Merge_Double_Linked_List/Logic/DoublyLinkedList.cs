@@ -9,39 +9,39 @@ namespace Logic
 {
     public class DoublyLinkedList<T> : IEnumerable<T>
     {
-        private DoublyNode<T> _head;
-        private DoublyNode<T> _tail;
-        private int _count;
+        public DoublyNode<T> Head { get; set; }
+        public DoublyNode<T> Tail { get; set; }
+        public int Count { get; set; }
 
         public DoublyLinkedList()
         {
-            _count = 0;
+            Count = 0;
         }
 
         public void Add(T value)
         {
             var newNode = new DoublyNode<T>() { Value = value };
 
-            if (_count == 0)
+            if (Count == 0)
             {
-                _head = newNode;
-                _tail = newNode;
+                Head = newNode;
+                Tail = newNode;
             }
             else
             {
-                newNode.Previous = _tail;
-                _tail.Next = newNode;
-                _tail = newNode;
+                newNode.Previous = Tail;
+                Tail.Next = newNode;
+                Tail = newNode;
             }
 
-            _count++;
+            Count++;
         }
 
         public IEnumerator<T> GetEnumerator()
         {
-            var currentNode = _head;
+            var currentNode = Head;
 
-            while (currentNode!= null)
+            while (currentNode != null)
             {
                 yield return currentNode.Value;
                 currentNode = currentNode.Next;

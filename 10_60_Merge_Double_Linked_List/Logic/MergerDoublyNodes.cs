@@ -33,6 +33,10 @@ namespace Logic
                 throw new ArgumentException("no tail in list");
             }
 
+            doubly.Count = nodes.Length;
+            doubly.Head = head;
+            doubly.Tail = tail;
+
             return doubly;
         }
     }

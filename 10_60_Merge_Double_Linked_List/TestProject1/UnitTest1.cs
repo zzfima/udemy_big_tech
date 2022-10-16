@@ -89,7 +89,7 @@ namespace TestProject1
         }
 
 
-       // [TestMethod]
+        [TestMethod]
         public void TestMethod5()
         {
             DoublyNode<int> node1 = new DoublyNode<int>() { Value = 11 };
@@ -107,7 +107,6 @@ namespace TestProject1
             node4.Previous = node3;
             node3.Previous = node2;
             node2.Previous = node1;
-            node1.Previous = node2;
 
             var nodes = new DoublyNode<int>[]
             {
