@@ -63,7 +63,7 @@ namespace TestProject1
             };
 
             var merger = new MergerDoublyNodes<int>();
-            Action act = () => merger.MergeBruteForce(nodes);
+            Action act = () => merger.Merge(nodes);
             act.Should().Throw<ArgumentException>().WithMessage("no head in list");
         }
 
@@ -84,7 +84,7 @@ namespace TestProject1
             };
 
             var merger = new MergerDoublyNodes<int>();
-            Action act = () => merger.MergeBruteForce(nodes);
+            Action act = () => merger.Merge(nodes);
             act.Should().Throw<ArgumentException>().WithMessage("no tail in list");
         }
 
@@ -114,7 +114,7 @@ namespace TestProject1
             };
 
             var merger = new MergerDoublyNodes<int>();
-            var doubly = merger.MergeBruteForce(nodes);
+            var doubly = merger.Merge(nodes);
             var cnt = 11;
 
             foreach (var i in doubly)

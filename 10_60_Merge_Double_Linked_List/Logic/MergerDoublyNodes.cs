@@ -4,7 +4,7 @@ namespace Logic
 {
     public class MergerDoublyNodes<T>
     {
-        public DoublyLinkedList<T> MergeBruteForce(DoublyNode<T>[] nodes)
+        public DoublyLinkedList<T> Merge(DoublyNode<T>[] nodes)
         {
             DoublyLinkedList<T> doubly = new DoublyLinkedList<T>();
             DoublyNode<T> head = null;
